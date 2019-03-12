@@ -43,9 +43,9 @@ func main() {
 
 	sharedInformerFactory := configinformers.NewSharedInformerFactory(client, time.Second*30)
 	informer := sharedInformerFactory.Config().V1().Features()
-	sharedInformerFactory.Start(stopCh)
-
 	controller := newController(client, informer)
+
+	sharedInformerFactory.Start(stopCh)
 	err = controller.run(1, stopCh)
 	if err != nil {
 		glog.Fatal(err)
