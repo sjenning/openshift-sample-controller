@@ -1,0 +1,19 @@
+package: github.com/sjenning/openshift-sample-controller
+import:
+- package: github.com/golang/glog
+- package: github.com/openshift/client-go
+  subpackages:
+  - config/clientset/versioned
+  - config/informers/externalversions
+  - config/informers/externalversions/config/v1
+  - config/listers/config/v1
+- package: k8s.io/apimachinery
+  subpackages:
+  - pkg/api/errors
+  - pkg/util/runtime
+  - pkg/util/wait
+- package: k8s.io/client-go
+  subpackages:
+  - tools/cache
+  - tools/clientcmd
+  - util/workqueue
